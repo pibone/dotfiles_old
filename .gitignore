@@ -1,0 +1,17 @@
+*history*
+*bookmark*
+*saved*
+*zcompdump*
+*list*
+*socket*
+*directory*
+
+spotify
+dconf
+chromium
+pulse
+VirtualBox
+gconf
+
+*.log
+*.crt

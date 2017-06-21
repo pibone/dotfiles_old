@@ -1,0 +1,11 @@
+rofi \
+	-combi-modi window,drun,run \
+	-show combi \
+	-opacity "85%" \
+	-lines 3 \
+	-eh 2 \
+	-width 100 \
+	-padding 800 \
+	-bw 0 \
+	-bg "#cecece" \
+	-font "System San Francisco Display 18"

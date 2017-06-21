@@ -1,0 +1,15 @@
+#!/bin/sh
+# Personal profile configuration
+export DOTPROFILE=${DOTPROFILE:=$HOME/.profile}
+if [ -f $DOTPROFILE ]; then source $DOTPROFILE; fi
+
+# Run the interface if its needed
+[ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
+
+# Configure the values for XDG
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
+export XDG_DATA_HOME=${XDG_DATA_HOME:=$HOME/.local/share}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:=$HOME/.cache}
+
+# PATH for ZSH config files
+export ZDOTDIR=${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}
