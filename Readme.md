@@ -1,4 +1,5 @@
 # Install
+```
 Firstly, install all the used applications. Listed the names for Archlinux-based system
 playerctl
 ponymix
@@ -36,6 +37,7 @@ pulseaudio
 git
 yaourt
 xfce4-power-manager
+```
 
 ## SpaceVim
 ```sh
