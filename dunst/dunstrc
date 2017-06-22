@@ -142,7 +142,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = palemoon
+    browser = chromium
 
     # Align icons left/right/off
     icon_position = left
@@ -191,7 +191,7 @@
 [urgency_critical]
     background = "#D62929"
     foreground = "#F9FAF9"
-    timeout = 0
+    timeout = 20
 
 
 # Every section that isn't one of the above is interpreted as a rules to
