@@ -15,7 +15,7 @@ yaourt -Syyu
 The rest of this intall requires you to have XDG spec properly configured
 or use the PAM Environment Install first and exit the session and login again.
 
-## PAM Environment
+## PAM Environment _Deprecated use DOTENV|DOTPROFILE_
 If already configured XDG spec:
 ```sh
 ln -s $XDG_CONFIG_HOME/pam_environment $HOME/.pam_environment
@@ -25,6 +25,14 @@ If not:
 ```sh
 ln -s .config/pam_environment $HOME/.pam_environment
 ```
+
+## DOTENV | DOTPROFILE
+Default DOTENV is `$HOME/.env`, place a file and configure the environment using `[z|ba|c]sh`
+
+Default DOTPROFILE is `$HOME/.profile`, place a file and configure the profile using `[z|ba|c]sh`
+symlink DOTPROFILE to `$XDG_CONFIG_HOME/shell/profile` or source it in your own
+
+Can be changed then place before than `shell/env` config is sourced. DOTENV is loaded first and the DOTPROFILE.
 
 ## SpaceVim[NeoVim]
 ```sh
@@ -36,14 +44,19 @@ ln -s $XDG_CONFIG_HOME/SpaceVim $HOME/.SpaceVim.d
 
 ## SHENV
 ```sh
-ln -s $XDG_CONFIG_HOME/shenv $HOME/.zshenv
-ln -s $XDG_CONFIG_HOME/shenv $HOME/.bash_profile
+ln -s $XDG_CONFIG_HOME/shell/env $HOME/.zshenv
+ln -s $XDG_CONFIG_HOME/shell/env $HOME/.bash_profile
 ```
 
 ## moc
 ```sh
 pacman -S moc
 ln -s $XDG_CONFIG_HOME/moc $HOME/.moc
+```
+
+## dmrc
+```sh
+ln -s $XDG_CONFIG_HOME/dmrc $HOME/.dmrc
 ```
 
 ## dmrc
