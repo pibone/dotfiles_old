@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Dotfiles
+export DOTENV=${DOTENV:=$HOME/.env}
+export DOTPROFILE=${DOTPROFILE:=$HOME/.profile}
+
+# Load personal env and profile
+if [ -f $DOTENV ]; then source $DOTENV; fi
+if [ -f $DOTPROFILE ]; then source $DOTPROFILE; fi
+
+# Run the interface if its needed
+[ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
+
