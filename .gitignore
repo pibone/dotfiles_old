@@ -15,3 +15,4 @@ gconf
 
 *.log
 *.crt
+xfce4/xfconf/xfce-perchannel-xml/thunar.xml
