@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+cd ~/.local/bin
+ls -l | grep "\-> ../share/" | awk '{print $9}' | xargs rm -f
+ln -sf ../share/*/bin/* .

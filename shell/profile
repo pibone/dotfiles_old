@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Configure the values for XDG
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
@@ -18,10 +18,13 @@ export XSERVERRC=${XSERVERRC:=$XDG_CONFIG_HOME/X11/xserverrc}
 export ERRFILE=${ERRFILE:=$TMPDIR/xsession-errors-$USER}
 
 # Configure Golang
-export GOPATH=${GOPATH:=$XDG_DATA_HOME/go}
+export GOPATH=${GOPATH:=$XDG_DATA_HOME/go:$HOME/dev/go}
+
+# Configure Rust
+export RUST_SRC_PATH=${RUST_SRC_PATH:=$XDG_DATA_HOME/rust/repo/src}
 
 # Configure PATH
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$XDG_CONFIG_HOME/scripts:$HOME/bin:$HOME/.local/bin
 
 # PATH for ZSH config files
 export ZDOTDIR=${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}

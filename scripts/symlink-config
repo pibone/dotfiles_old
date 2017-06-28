@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=~/.config}
+XDG_DATA_HOME=${XDG_DATA_HOME:=~/.local/share}
+
+ln -sf $XDG_CONFIG_HOME/dmrc ~/.dmrc
+ln -sf $XDG_CONFIG_HOME/moc ~/.moc
+ln -sf $XDG_CONFIG_HOME/editorconfig/config ~/.editorconfig
+ln -sf $XDG_CONFIG_HOME/shell/profile ~/.profile
+
+ln -sf $XDG_DATA_HOME/cargo ~/.cargo
+ln -sf $XDG_DATA_HOME/rustup ~/.rustup
+ln -sf $XDG_DATA_HOME/rustup ~/.multirust
