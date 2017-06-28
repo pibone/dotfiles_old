@@ -93,7 +93,7 @@ call HookLang('*.go', 'go')
 " rust config
 let g:langlayer_rust_build = ':!cargo build<CR>'
 let g:langlayer_rust_run = ':! cargo run<CR>'
-let g:racer_cmd = '/usr/bin/racer'
+let g:racer_cmd = $HOME . '/.local/bin/racer'
 call HookLang('*.rs', 'rust')
 
 " plugins
