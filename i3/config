@@ -219,6 +219,7 @@ for_window [class="Spotify"] move to workspace $ws4
 assign [class="Thunderbird"] $ws4
 assign [class="Chromium"] $ws2
 assign [class="Termite"] $ws1
+assign [class="Steam"] $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
