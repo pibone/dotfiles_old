@@ -39,7 +39,7 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+q kill
 
-# remap binds to control key 
+# remap binds to control key
 bindsym --release $mod+w exec --no-startup-id xdotool key --clearmodifiers ctrl+w
 bindsym --release $mod+t exec --no-startup-id xdotool key --clearmodifiers ctrl+t
 
@@ -109,7 +109,7 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace bac
 # split orientation
 bindsym $mod+slash split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+backslash split toggle 
+bindsym $mod+backslash split toggle
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f fullscreen toggle global
@@ -147,8 +147,8 @@ bindsym $mod+Ctrl+l workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 set $ws1 "1: Work"
-set $ws2 "2: Doc"
-set $ws3 "3: Game"
+set $ws2 "2: Game"
+set $ws3 "3: Doc"
 set $ws4 "4: Back"
 #set $ws5 "5"
 #set $ws6 "6"
@@ -161,8 +161,8 @@ set $monitor_one "DP1"
 set $monitor_two "HDMI3"
 
 workspace $ws1 output $monitor_one
-workspace $ws2 output $monitor_two
-workspace $ws3 output $monitor_one
+workspace $ws2 output $monitor_one
+workspace $ws3 output $monitor_two
 workspace $ws4 output $monitor_two
 #workspace $ws5 output $monitor_one
 #workspace $ws6 output $monitor_two
@@ -382,7 +382,7 @@ gaps outer -4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
