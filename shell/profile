@@ -1,4 +1,4 @@
-#!/bin/zsh
+#/bin/zsh
 
 # Configure the values for XDG
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=$HOME/.config}
@@ -21,10 +21,12 @@ export ERRFILE=${ERRFILE:=$TMPDIR/xsession-errors-$USER}
 export GOPATH=${GOPATH:=$XDG_DATA_HOME/go:$HOME/dev/go}
 
 # Configure Rust
-export RUST_SRC_PATH=${RUST_SRC_PATH:=$XDG_DATA_HOME/rust/repo/src}
+export RUST_SRC_PATH=${RUST_SRC_PATH:=`rustc --print sysroot`/lib/rustlib/src/rust/src}
 
 # Configure PATH
 export PATH=$PATH:$XDG_CONFIG_HOME/scripts:$HOME/bin:$HOME/.local/bin
+export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:=$HOME/Android/Sdk}
 
 # PATH for ZSH config files
 export ZDOTDIR=${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}
+

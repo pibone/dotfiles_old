@@ -3,6 +3,30 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $down Mod3
+
+
+bindsym --release $down+a exec --no-startup-id xdotool key --delay 1 1
+bindsym --release $down+s exec --no-startup-id xdotool key --delay 1 2
+bindsym --release $down+d exec --no-startup-id xdotool key --delay 1 3
+bindsym --release $down+f exec --no-startup-id xdotool key --delay 1 4
+bindsym --release $down+g exec --no-startup-id xdotool key --delay 1 5
+bindsym --release $down+h exec --no-startup-id xdotool key --delay 1 6
+bindsym --release $down+j exec --no-startup-id xdotool key --delay 1 7
+bindsym --release $down+k exec --no-startup-id xdotool key --delay 1 8
+bindsym --release $down+l exec --no-startup-id xdotool key --delay 1 9
+bindsym --release $down+semicolon exec --no-startup-id xdotool key --delay 1 0
+
+bindsym --release $down+shift+a exec --no-startup-id xdotool type --delay 1 "!"
+bindsym --release $down+shift+s exec --no-startup-id xdotool type --delay 1 "@"
+bindsym --release $down+shift+d exec --no-startup-id xdotool type --delay 1 "#"
+bindsym --release $down+shift+f exec --no-startup-id xdotool type --delay 1 "$"
+bindsym --release $down+shift+g exec --no-startup-id xdotool type --delay 1 "%"
+bindsym --release $down+shift+h exec --no-startup-id xdotool type --delay 1 "^"
+bindsym --release $down+shift+j exec --no-startup-id xdotool type --delay 1 "&"
+bindsym --release $down+shift+k exec --no-startup-id xdotool type --delay 1 "*"
+bindsym --release $down+shift+l exec --no-startup-id xdotool type --delay 1 "("
+bindsym --release $down+shift+semicolon exec --no-startup-id xdotool type --delay 1 ")"
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -117,6 +141,7 @@ bindsym $mod+Shift+f fullscreen toggle global
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Ctrl+s layout stacking
 bindsym $mod+Ctrl+t layout tabbed
+bindsym $mod+Ctrl+w layout default
 bindsym $mod+Ctrl+e layout toggle split
 
 # toggle tiling / floating
@@ -147,9 +172,9 @@ bindsym $mod+Ctrl+l workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 set $ws1 "1: Work"
-set $ws2 "2: Game"
+set $ws2 "2: Back Work"
 set $ws3 "3: Doc"
-set $ws4 "4: Back"
+set $ws4 "4: Back Doc"
 #set $ws5 "5"
 #set $ws6 "6"
 #set $ws7 "7"
@@ -216,10 +241,10 @@ bindsym $mod+Ctrl+4 move container to workspace $ws4; workspace $ws4
 assign [class="Spotify"] $ws4
 # Fix for Spotify bad behaviour
 for_window [class="Spotify"] move to workspace $ws4
-assign [class="Thunderbird"] $ws4
-assign [class="Chromium"] $ws2
-assign [class="Termite"] $ws1
-assign [class="Steam"] $ws9
+# assign [class="Thunderbird"] $ws4
+# assign [class="Chromium"] $ws2
+# assign [class="Termite"] $ws1
+# assign [class="Steam"] $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
@@ -252,6 +277,16 @@ for_window [class="Timeset-gui"] floating enable border normal
 # for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
+set $app_mode (w)eb_browser, (e)ditor
+bindsym $mod+p mode "$app_mode"
+mode "$app_mode" {
+  bindsym e exec code, mode "default"
+  bindsym w exec chromium, mode "default"
+
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -267,8 +302,8 @@ bindsym $mod+Shift+e exec i3-msg exit
 
 
 # Set shut down, restart and locking features
-bindsym $mod+Shift+q mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+bindsym $mod+Shift+q mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -338,7 +373,6 @@ bar {
 	bindsym button5 nop
 	font xft:Noto Sans 10.5
 	strip_workspace_numbers yes
-
 	colors {
 #       background $transparent
         background #2B2C2B

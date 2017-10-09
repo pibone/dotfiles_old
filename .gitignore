@@ -1,18 +1,27 @@
-*hist*
 *bookmark*
-*saved*
-*zcompdump*
-*list*
-*socket*
 *directory*
+*hist*
+*list*
+*saved*
+*socket*
+*store*
+*xfce4*
+*zcompdump*
 
-spotify
-dconf
+autostart
+Android Open Source Project
+calibre
 chromium
-pulse
-VirtualBox
+Code Industry
+dconf
+Epic
 gconf
+menus
+spotify
+pulse
+Unreal Engine
+VirtualBox
 
-*.log
 *.crt
-xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+*.conf
+*.log

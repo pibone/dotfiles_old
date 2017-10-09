@@ -12,6 +12,10 @@ fi
 # Configuration for prezto
 source $XDG_DATA_HOME/prezto/init.zsh
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
 # Set KEYTIMEOUT to the least possible value
 export KEYTIMEOUT=1
 
@@ -28,3 +32,6 @@ if [ -d /usr/share/fzf ]; then
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
+
+# kubectl alias
+alias kubectl="/usr/bin/kubectl --kubeconfig=kubeconfig"

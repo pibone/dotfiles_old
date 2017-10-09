@@ -1,5 +1,11 @@
 set termguicolors
 " base config
+filetype indent on
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 syntax on
 set shell=zsh
 set clipboard=unnamedplus
@@ -42,13 +48,33 @@ nnoremap <silent><leader>wd :close<CR>
 " file nav
 nnoremap <silent><leader>ff :call fzf#vim#files(expand('%:p:h'))<CR>
 nnoremap <silent><leader>fw :Files .<CR>
+nnoremap <silent><leader>fW :Files? .<CR>
 nnoremap <silent><leader>fh :Files ~<CR>
-nnoremap <silent><leader>fp :GFiles?<CR>
+nnoremap <silent><leader>fH :Files? ~<CR>
+nnoremap <silent><leader>fp :GFiles<CR>
+nnoremap <silent><leader>fP :GFiles?<CR>
+nnoremap <silent><leader>fb :Buffers<CR>
+nnoremap <silent><leader>fB :Buffers?<CR>
 " config reload/edit
 nnoremap <silent><leader>feR :so $MYVIMRC<CR>
 nnoremap <silent><leader>fed :e $MYVIMRC<CR>
+
 " switch back
 nnoremap <silent><leader><tab> <c-^>
+
+" moving around
+nmap <leader>mf <Plug>(easymotion-overwin-f)
+nmap <leader>ms <Plug>(easymotion-overwin-f2)
+nmap <leader>ml <Plug>(easymotion-overwin-line)
+nmap <leader>mw <Plug>(easymotion-overwin-w)
+
+" search
+nmap <leader>s/ <Plug>(incsearch-easymotion-/)
+nmap <leader>s? <Plug>(incsearch-easymotion-?)
+nmap <leader>sg/ <Plug>(incsearch-easymotion-stay)
+nmap / <Plug>(incsearch-forward)
+nmap ? <Plug>(incsearch-backward)
+nmap g/ <Plug>(incsearch-stay)
 
 " autocompletion
 let g:deoplete#enable_at_startup=1
@@ -98,7 +124,16 @@ call HookLang('*.rs', 'rust')
 
 " plugins
 call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
+Plug 'sickill/vim-pasta'
+Plug 'kshenoy/vim-signature'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
+Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'plasticboy/vim-markdown'
 Plug 'neomake/neomake'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
