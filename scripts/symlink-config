@@ -9,6 +9,7 @@ ln -sf $XDG_CONFIG_HOME/moc ~/.moc
 ln -sf $XDG_CONFIG_HOME/editorconfig/config ~/.editorconfig
 ln -sf $XDG_CONFIG_HOME/shell/profile ~/.profile
 
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ln -sf $XDG_CONFIG_HOME/spacemacs.d/ ~/.spacemacs.d
 ln -sf $XDG_DATA_HOME/cargo ~/.cargo
 ln -sf $XDG_DATA_HOME/rustup ~/.rustup
