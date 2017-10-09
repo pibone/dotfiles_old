@@ -33,5 +33,3 @@ if [ -d /usr/share/fzf ]; then
     source /usr/share/fzf/completion.zsh
 fi
 
-# kubectl alias
-alias kubectl="/usr/bin/kubectl --kubeconfig=kubeconfig"
